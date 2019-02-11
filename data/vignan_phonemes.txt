@@ -1,0 +1,46 @@
+50 cv
+35 c
+15 v
+VOWELS
+a
+(ay)
+(ah)
+e
+(er)
+(ee)
+i
+ī
+o
+oo
+(ow)
+(or)
+ŭ
+(yoo)
+CONSONANTS
+b
+d
+f
+g
+h
+j
+k
+l
+m
+n
+ŋ
+p
+q
+r
+s
+t
+v
+w
+x
+y
+z
+z̧
+ç
+ş
+ð
+þ
+END
