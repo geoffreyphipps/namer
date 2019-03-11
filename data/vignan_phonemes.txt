@@ -1,6 +1,5 @@
-50 cv
-35 c
-15 v
+80 cv
+20 v
 VOWELS
 a
 (ay)
@@ -9,9 +8,9 @@ e
 (er)
 (ee)
 i
-ī
 o
-oo
+(oo)
+(oh)
 (ow)
 (or)
 ŭ
@@ -42,5 +41,24 @@ z̧
 ç
 ş
 ð
-þ
+θ
+br
+bl
+kl
+kr
+dr
+fr
+fl
+gr
+gl
+(gh)
+pr
+pl
+sm
+sn
+st
+sl
+sp
+sw
+tr
 END

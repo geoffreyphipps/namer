@@ -20,7 +20,7 @@ probabilities must be integers that add to 100. Each syllable
 is chosen randomly, there are no phonetic rules between 
 syllables.
   
-The phonemes.py prgram generates syllables from vowels
+The phonemes.py program generates syllables from vowels
 and consonants. It could generate whole words if the 
 vowel-consonant rules were extended. I currently use it
 to generate syllables to put into the syllables file to feed

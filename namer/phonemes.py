@@ -8,7 +8,8 @@ from namer.numbers import random_bucket
 class Phonemes:
     """
     File format is:
-      First block is pattern with percentages. v is vowel, c is consonant. Leading integer is percentage chance it occurs
+      First block is pattern with percentages:
+    v is vowel, c is consonant. The leading integer is the percentage chance it occurs.
       Following that is a VOWEL
         then one vowel sounds per line
       Following that is a CONSONANTS
@@ -28,7 +29,7 @@ class Phonemes:
                 line = f.readline()
                 if line[:-1] == "VOWELS":
                     break
-                r = line.split();
+                r = line.split()
                 self.phoneme_probabilities.append((int(r[0]), r[1]))
                 total += int(r[0])
 

@@ -8,13 +8,13 @@ from namer.numbers import random_bucket
 class Namer:
     """
     File format is:
-      First line is a series of integers that add up to 100. That is the percentage chance of that number
-      of syllables.
-      Following that is one syllable per line
+      First line is a series of integers that add up to 100.
+      That is the percentage chance of that number of syllables.
+      Following that is one syllable per line.
     """
 
     def __init__(self):
-        self.syllable_probabilities: List[Tuple[int,int]] = []
+        self.syllable_probabilities: List[Tuple[int, int]] = []
         self.syllables: List[str] = []
 
     def read_language_definitions(self, filename: str):
