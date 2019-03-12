@@ -67,6 +67,4 @@ def generate_words_in_language(word_file_name: str, number_of_words: int, output
 
 if __name__ == "__main__":
     generate_words_in_language(sys.argv[1], int(sys.argv[2]), sys.argv[3])
-    data / vignan_syllables.txt
-    1000
-    v.txt
+
