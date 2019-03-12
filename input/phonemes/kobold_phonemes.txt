@@ -1,5 +1,5 @@
-80 cv
-20 v
+#Kobold
+100 cv
 VOWELS
 a
 (ay)
@@ -8,42 +8,24 @@ e
 (er)
 (ee)
 i
-o
-(oo)
-(oh)
-(ow)
-(or)
-ŭ
-(yoo)
 CONSONANTS
-b
-d
 f
 g
 h
 j
 k
 l
-m
-n
 ŋ
-p
 q
 r
 s
 t
 v
-w
 x
 y
 z
-z̧
-ç
+̧ç
 ş
-ð
-θ
-br
-bl
 kl
 kr
 dr
@@ -52,8 +34,6 @@ fl
 gr
 gl
 (gh)
-pr
-pl
 sm
 sn
 st

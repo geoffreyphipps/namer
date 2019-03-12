@@ -7,7 +7,8 @@ from namer.numbers import random_bucket
 
 class Namer:
     """
-    File format is:
+      Generates a bunch of words, severl per line
+      The Input File format is:
       First line is a series of integers that add up to 100.
       That is the percentage chance of that number of syllables.
       Following that is one syllable per line.
@@ -20,7 +21,9 @@ class Namer:
     def read_language_definitions(self, filename: str):
         with open(filename) as f:
             # First line is syllable probabilities
-            raw = f.readline().split()
+            raw = ['#']
+            while raw[0][0] == '#':
+                raw = f.readline().split()
 
             i = 0
             total = 0
@@ -33,24 +36,37 @@ class Namer:
                 raise ValueError(f"Probabilities add up to {total}, not 100")
 
             for line in f:
-                self.syllables.append(line[:-1])
+                if len(line) > 0 and not line[0] == '#':
+                    self.syllables.append(line[:-1])
 
-    def generate(self, number_of_words: int, output_file_name: str):
+    def generate(self, number_of_words: int, output_file_name: str, words_per_line: int = 3):
+        word_count = 0
+        char_count = 0
         with open(output_file_name, "w") as f:
             for _ in range(number_of_words):
                 number_of_syllables = random_bucket(self.syllable_probabilities)
                 f.write(f"{number_of_syllables}: ")
                 for _ in range(number_of_syllables):
                     syllable_number = randint(1, len(self.syllables))
-                    f.write(self.syllables[syllable_number - 1])
-                f.write('\n')
+                    syllable = self.syllables[syllable_number - 1]
+                    char_count += len(syllable)
+                    f.write(syllable)
+                word_count = (word_count + 1) % words_per_line
+                if word_count == 0:
+                    f.write('\n')
+                else:
+                    f.write(' '*(30 - char_count))
+                char_count = 0
 
 
-def main(filename: str, number_of_words: int, output_file_name: str):
+def generate_words_in_language(word_file_name: str, number_of_words: int, output_file_name: str):
     n = Namer()
-    n.read_language_definitions(filename)
+    n.read_language_definitions(word_file_name)
     n.generate(number_of_words, output_file_name)
 
 
 if __name__ == "__main__":
-    main(sys.argv[1], int(sys.argv[2]), sys.argv[3])
+    generate_words_in_language(sys.argv[1], int(sys.argv[2]), sys.argv[3])
+    data / vignan_syllables.txt
+    1000
+    v.txt

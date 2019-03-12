@@ -27,6 +27,8 @@ class Phonemes:
             total = 0
             while True:
                 line = f.readline()
+                if len(line) == 0 or line[0] == '#':
+                    continue
                 if line[:-1] == "VOWELS":
                     break
                 r = line.split()
@@ -38,6 +40,8 @@ class Phonemes:
 
             while True:
                 line = f.readline()
+                if len(line) == 0 or line[0] == '#':
+                    continue
                 if line[:-1] == "CONSONANTS":
                     break
                 self.vowels.append(line[:-1])
@@ -70,11 +74,11 @@ class Phonemes:
                 f.write('\n')
 
 
-def main(filename: str, number_of_syllables: int, output_file_name: str):
+def generate_phonemes_in_language(filename: str, number_of_syllables: int, output_file_name: str):
     p = Phonemes()
     p.read_language_definitions(filename)
     p.generate(number_of_syllables, output_file_name)
 
 
 if __name__ == "__main__":
-    main(sys.argv[1], int(sys.argv[2]), sys.argv[3])
+    generate_phonemes_in_language(sys.argv[1], int(sys.argv[2]), sys.argv[3])
