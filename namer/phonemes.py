@@ -16,12 +16,12 @@ class Phonemes:
         then one consonant sounds per line
     """
 
-    def __init__(self):
+    def __init__(self) -> None:
         self.phoneme_probabilities: List[Tuple[int, str]] = []
         self.vowels: List[str] = []
         self.consonants: List[str] = []
 
-    def read_language_definitions(self, filename: str):
+    def read_language_definitions(self, filename: str) -> None:
         with open(filename) as f:
             # First sequence is phoneme probabilities
             total = 0
@@ -51,7 +51,7 @@ class Phonemes:
                     break
                 self.consonants.append(line[:-1])
 
-    def generate(self, number_of_syllables: int, output_file_name: str):
+    def generate(self, number_of_syllables: int, output_file_name: str) -> None:
         last_vowel_index = -1
         with open(output_file_name, "w") as f:
             for _ in range(number_of_syllables):
@@ -74,7 +74,7 @@ class Phonemes:
                 f.write('\n')
 
 
-def generate_phonemes_in_language(filename: str, number_of_syllables: int, output_file_name: str):
+def generate_phonemes_in_language(filename: str, number_of_syllables: int, output_file_name: str) -> None:
     p = Phonemes()
     p.read_language_definitions(filename)
     p.generate(number_of_syllables, output_file_name)

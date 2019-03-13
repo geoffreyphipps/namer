@@ -5,7 +5,7 @@ from namer.words import generate_words_in_language
 from namer.phonemes import generate_phonemes_in_language
 
 
-def generate_all_syllabic_structures():
+def generate_all_syllabic_structures() -> None:
     os.makedirs(f"output/tmp", 0o755, True)
     os.makedirs(f"output/syllables", 0o755, True)
     for file in os.listdir('input/phonemes'):
@@ -16,10 +16,10 @@ def generate_all_syllabic_structures():
             tmp_file = f"output/tmp/{language_name}_list.tmp"
             generate_phonemes_in_language(f"input/phonemes/{file}", 1000, tmp_file)
             os.system(f"cat {probabilities_file} {tmp_file} > {final_file}")
-            #os.remove(tmp_file)
+            os.remove(tmp_file)
 
 
-def generate_all_languages():
+def generate_all_languages() -> None:
     for file in os.listdir('output/syllables'):
         if fnmatch.fnmatch(file, '*_syllables.txt'):
             language_name = '_'.join(file.split('_')[:-1])

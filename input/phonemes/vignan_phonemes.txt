@@ -29,7 +29,6 @@ m
 n
 ŋ
 p
-q
 r
 s
 t
@@ -44,6 +43,7 @@ br
 bl
 kl
 kr
+kw
 dr
 fr
 fl

@@ -9,14 +9,12 @@ e
 (ee)
 i
 CONSONANTS
-f
 g
 h
 j
 k
 l
 ŋ
-q
 r
 s
 t
@@ -29,11 +27,6 @@ z
 kl
 kr
 dr
-fr
-fl
-gr
-gl
-(gh)
 sm
 sn
 st

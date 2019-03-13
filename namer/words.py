@@ -14,11 +14,11 @@ class Namer:
       Following that is one syllable per line.
     """
 
-    def __init__(self):
+    def __init__(self) -> None:
         self.syllable_probabilities: List[Tuple[int, int]] = []
         self.syllables: List[str] = []
 
-    def read_language_definitions(self, filename: str):
+    def read_language_definitions(self, filename: str) -> None:
         with open(filename) as f:
             # First line is syllable probabilities
             raw = ['#']
@@ -39,7 +39,7 @@ class Namer:
                 if len(line) > 0 and not line[0] == '#':
                     self.syllables.append(line[:-1])
 
-    def generate(self, number_of_words: int, output_file_name: str, words_per_line: int = 3):
+    def generate(self, number_of_words: int, output_file_name: str, words_per_line: int = 3) -> None:
         word_count = 0
         char_count = 0
         with open(output_file_name, "w") as f:
@@ -55,11 +55,11 @@ class Namer:
                 if word_count == 0:
                     f.write('\n')
                 else:
-                    f.write(' '*(30 - char_count))
+                    f.write(' ' * (30 - char_count))
                 char_count = 0
 
 
-def generate_words_in_language(word_file_name: str, number_of_words: int, output_file_name: str):
+def generate_words_in_language(word_file_name: str, number_of_words: int, output_file_name: str) -> None:
     n = Namer()
     n.read_language_definitions(word_file_name)
     n.generate(number_of_words, output_file_name)
@@ -67,4 +67,3 @@ def generate_words_in_language(word_file_name: str, number_of_words: int, output
 
 if __name__ == "__main__":
     generate_words_in_language(sys.argv[1], int(sys.argv[2]), sys.argv[3])
-
